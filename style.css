@@ -39,7 +39,6 @@ nav {
     display: flex;
     gap: 2vw;
     margin-left: auto;
-    text-decoration: none;
 }
 
 #menu a {
@@ -52,10 +51,25 @@ nav {
 #icons {
     display: flex;
     gap: 1vw;
-    color: white;
     font-size: 1.2vw;
     margin-left: 2vw;
+}
+
+/* 🔥 REMOVE AZUL DOS LINKS DOS ÍCONES */
+#icons a,
+#menu-icons a {
+    color: white;
     text-decoration: none;
+}
+
+#icons a:visited,
+#menu-icons a:visited {
+    color: white;
+}
+
+#icons a:hover,
+#menu-icons a:hover {
+    color: white;
 }
 
 /* ================= HAMBURGUER ================= */
@@ -79,7 +93,7 @@ nav {
     transition: 0.3s ease;
 }
 
-/* X PERFEITO (SEM TORTO) */
+/* X PERFEITO */
 #hamburguer.active span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
 }
@@ -146,6 +160,11 @@ nav {
         margin-top: auto;
         width: 100%;
     }
+
+    #menu-icons a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* ================= VIDEO ================= */
@@ -198,22 +217,16 @@ nav {
 }
 
 .pacotes {
-    background-color: grey;
-    width: 35vh;
-    height: 30vh;
+    background-color: rgb(180, 180, 180);
+    width: 50vh;
+    height: 350px;
     border-radius: 20px;
     padding: 2vh;
 }
 
-
-
-
-
-
-
-
-
-
+.fourth {
+    
+}
 
 
 /* ================= FOOTER ================= */
