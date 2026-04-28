@@ -82,13 +82,15 @@ nav {
     margin-left: 3vw;
     border-radius: 3vw;
     border: none;
-    background-color: orange;
+    background-color: #f5ab18;
     color: white;
-    font-size: 1vw;
+    font-size: 1.2vw;
+    font-family: 'Inter', sans-serif;
+    transition: 0.5s;
 }
 
 #botao:hover {
-    background-color: rgb(255, 150, 0);
+    background-color: #fbc421;
 }
 
 /* ================= HAMBURGUER ================= */
