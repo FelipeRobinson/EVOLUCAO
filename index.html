@@ -10,8 +10,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--
+    <div class="welcome-popup" id="welcome-popup" aria-hidden="true">
+        <div class="welcome-popup__backdrop" data-popup-close></div>
+        <section class="welcome-popup__content" role="dialog" aria-modal="true" aria-labelledby="welcome-popup-title">
+            <button class="welcome-popup__close" type="button" aria-label="Fechar aviso" data-popup-close>
+                <i class="fas fa-xmark"></i>
+            </button>
+            <span class="welcome-popup__eyebrow"><i class="fas fa-car-side"></i> Autoescola Evolução</span>
+            <h1 id="welcome-popup-title">Sua CNH começa aqui.</h1>
+            <p>Fale com a nossa equipe e descubra o pacote ideal para você começar a dirigir com segurança.</p>
+            <button class="welcome-popup__cta whatsapp-btn" type="button">
+                <i class="fab fa-whatsapp"></i>
+                Quero mais informações
+            </button>
+            <button class="welcome-popup__dismiss" type="button" data-popup-close>Agora não, obrigado</button>
+        </section>
+    </div>
+    -->
+    <div class="welcome-popup category-d-popup" id="category-d-popup" aria-hidden="true">
+        <div class="welcome-popup__backdrop" data-category-popup-close></div>
+        <section class="welcome-popup__content" role="dialog" aria-modal="true" aria-labelledby="category-d-popup-title">
+            <button class="welcome-popup__close" type="button" aria-label="Fechar anúncio da Categoria D" data-category-popup-close>
+                <i class="fas fa-xmark"></i>
+            </button>
+            <span class="welcome-popup__eyebrow"><i class="fas fa-sparkles"></i> Novidade na Evolução</span>
+            <div class="category-d-popup__icon"><i class="fas fa-bus"></i></div>
+            <h1 id="category-d-popup-title">Agora temos Categoria D!</h1>
+            <p>Prepare-se para conduzir veículos de transporte de passageiros com acompanhamento completo e instrutores preparados.</p>
+            <div class="category-d-popup__highlights" aria-label="Diferenciais da Categoria D">
+                <span><i class="fas fa-check"></i> Aulas práticas</span>
+                <span><i class="fas fa-check"></i> Suporte em cada etapa</span>
+                <span><i class="fas fa-check"></i> Direção segura</span>
+            </div>
+            <button class="welcome-popup__cta" id="category-d-popup-cta" type="button">
+                Conhecer a Categoria D <i class="fas fa-arrow-down"></i>
+            </button>
+            <button class="welcome-popup__dismiss" type="button" data-category-popup-close>Fechar anúncio</button>
+        </section>
+    </div>
     <nav id="navbar">
-        <img id="logo" src="./img/EvolucaoLogoScreen.png">
+        <a href="./index.html">
+            <img id="logo" src="./img/EvolucaoLogoScreen.png">
+        </a>
         <div id="menu">
             <a href="#inicio">Início</a>
             <a href="#pacotes">Pacotes</a>
@@ -103,16 +144,6 @@
         </div>
     </section>
     <section class="second" id="pacotes">
-        <div class="pacotes" id="a-b">
-            <span class="package-kicker"><i class="fas fa-car-side"></i><i class="fas fa-motorcycle"></i> Mais escolhido</span>
-            <h1>CATEGORIA A/B</h1>
-            <h3>Formação completa para moto e carro em um único pacote.</h3>
-            <h3>Aulas práticas com motos e carros modernos e revisados.</h3>
-            <h3>Instrutores credenciados, pacientes e preparados para te acompanhar.</h3>
-            <h3>Parcelamento facilitado e excelente custo-benefício.</h3>
-            <h3>Melhor preço de Campinas e região.</h3>
-            <button class="cat"><i class="fas fa-arrow-down"></i> Mais informações</button>
-        </div>
         <div class="pacotes" id="a">
             <span class="package-kicker"><i class="fas fa-motorcycle"></i> Moto</span>
             <h1>CATEGORIA A</h1>
@@ -131,6 +162,24 @@
             <h3>Aulas focadas em direção segura e situações reais do trânsito.</h3>
             <h3>Instrutores credenciados, treinados e pacientes.</h3>
             <h3>Aula e prova no mesmo veículo para maior confiança.</h3>
+            <button class="cat"><i class="fas fa-arrow-down"></i> Mais informações</button>
+        </div>
+        <div class="pacotes" id="a-b">
+            <span class="package-kicker"><i class="fas fa-car-side"></i><i class="fas fa-motorcycle"></i> Mais escolhido</span>
+            <h1>CATEGORIA A/B</h1>
+            <h3>Formação completa para moto e carro em um único pacote.</h3>
+            <h3>Aulas práticas com motos e carros modernos e revisados.</h3>
+            <h3>Instrutores credenciados, pacientes e preparados para te acompanhar.</h3>
+            <h3>Parcelamento facilitado e excelente custo-benefício.</h3>
+            <h3>Melhor preço de Campinas e região.</h3>
+            <button class="cat"><i class="fas fa-arrow-down"></i> Mais informações</button>
+        </div>
+        <div class="pacotes" id="d">
+            <span class="package-kicker"><i class="fas fa-bus"></i> Veículos de passageiros</span>
+            <h1>CATEGORIA D</h1>
+            <h3>Preparação para conduzir veículos de transporte de passageiros.</h3>
+            <h3>Aulas práticas em veículos adequados à categoria, modernos e revisados.</h3>
+            <h3>Treinamento focado em direção segura.</h3>
             <button class="cat"><i class="fas fa-arrow-down"></i> Mais informações</button>
         </div>
         <div class="pacotes" id="more_class">
@@ -160,17 +209,6 @@
             <button class="cat"><i class="fas fa-arrow-down"></i> Mais informações</button>
         </div>
     </section>
-
-    <section class="fifth">
-        <div class="galery">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-        </div>
-    </section>
     <section class="sixth" id="contato">
         <div class="sixth-content">
             <div class="contatos">
@@ -193,14 +231,11 @@
             </div>
             <form class="cadastro" action="#">
                 <h1>CADASTRE-SE</h1>
-
                 <label for="cadastro-email">NOME</label>
                 <input type="text" id="cadastro-email" name="nome" placeholder="Digite seu nome completo" autocomplete="name" required>
-
                 <label for="cadastro-numero">NÚMERO</label>
                 <input type="tel" id="cadastro-numero" name="numero" placeholder="Informe seu número de whatsapp" autocomplete="tel" inputmode="tel" required>
                 <span class="cadastro-error" id="cadastro-error" aria-live="polite"></span>
-
                 <button class="whatsapp-btn signup-submit" type="button">Cadastrar-se</button>
             </form>
         </div>

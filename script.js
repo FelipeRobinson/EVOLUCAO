@@ -39,6 +39,73 @@ menuSectionLinks.forEach(link => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    /* POP-UP DE BOAS-VINDAS */
+    const welcomePopup = document.getElementById("welcome-popup");
+    const popupCloseButtons = document.querySelectorAll("[data-popup-close]");
+    const categoryDPopup = document.getElementById("category-d-popup");
+    const categoryPopupCloseButtons = document.querySelectorAll("[data-category-popup-close]");
+    const categoryDPopupCta = document.getElementById("category-d-popup-cta");
+    let categoryDPopupWasShown = false;
+
+    const fecharPopup = popup => {
+        popup?.classList.remove("is-open");
+        popup?.setAttribute("aria-hidden", "true");
+    };
+
+    const abrirCategoryDPopup = () => {
+        if (!categoryDPopup || categoryDPopupWasShown) {
+            return;
+        }
+
+        categoryDPopupWasShown = true;
+        categoryDPopup.classList.add("is-open");
+        categoryDPopup.setAttribute("aria-hidden", "false");
+        categoryDPopup.querySelector(".welcome-popup__close")?.focus();
+    };
+
+    const fecharWelcomePopup = () => {
+        if (!welcomePopup?.classList.contains("is-open")) {
+            return;
+        }
+
+        fecharPopup(welcomePopup);
+    };
+
+    // Independente do pop-up de boas-vindas: exibe o anúncio mesmo se ele estiver desativado.
+    window.setTimeout(abrirCategoryDPopup, 500);
+
+    if (welcomePopup) {
+        window.setTimeout(() => {
+            welcomePopup.classList.add("is-open");
+            welcomePopup.setAttribute("aria-hidden", "false");
+            welcomePopup.querySelector(".welcome-popup__close")?.focus();
+        }, 500);
+
+        popupCloseButtons.forEach(button => {
+            button.addEventListener("click", fecharWelcomePopup);
+        });
+    }
+
+    // Os controles da Categoria D não dependem da existência do pop-up de boas-vindas.
+    categoryPopupCloseButtons.forEach(button => {
+        button.addEventListener("click", () => fecharPopup(categoryDPopup));
+    });
+
+    categoryDPopupCta?.addEventListener("click", () => {
+        fecharPopup(categoryDPopup);
+        document.getElementById("d")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            if (categoryDPopup?.classList.contains("is-open")) {
+                fecharPopup(categoryDPopup);
+            } else {
+                fecharWelcomePopup();
+            }
+        }
+    });
+
     const menuSections = Array.from(menuSectionLinks)
         .map(link => document.getElementById(link.getAttribute("href").replace("#", "")))
         .filter(Boolean);
@@ -317,6 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "a-b": "Olá, vim do site e gostaria de mais informações sobre minha CNH CATEGORIA A/B.",
         "a": "Olá, vim do site e gostaria de mais informações sobre minha CNH CATEGORIA A.",
         "b": "Olá, vim do site e gostaria de mais informações sobre minha CNH CATEGORIA B.",
+        "d": "Olá, vim do site e gostaria de mais informações sobre minha CNH CATEGORIA D.",
         "more_class": "Olá, vim do site e gostaria de mais informações sobre aulas para recém habilitados.",
         "reciclagem": "Olá, vim do site e gostaria de mais informações sobre reciclagem da CNH."
     };
